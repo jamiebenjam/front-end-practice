@@ -1,3 +1,5 @@
+/* Write your code here. */
+
 .head {
   position: relative;
   height: 200px;
@@ -52,8 +54,8 @@
 
 .pupil {
   background-color: black;
-  width: 25px;
-  height: 25px;
+  width: 50%;
+  height: 50%;
   border-radius: 50%;
 }
 
@@ -66,5 +68,18 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  top: 30px
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 2px solid black;
 }
+
+.nostril {
+  height: 50%;
+  width: 25%;
+  background-color: black;
+  border-radius: 50%
+}
+
+
+
