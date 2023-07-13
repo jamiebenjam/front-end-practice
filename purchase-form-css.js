@@ -34,33 +34,55 @@
 /*  Write your code here. */
 
 #wrapper {
-  padding: 12px;
-  border-radius: 12px;
-  background-color: #e0e0e0;
+  padding: var(--wrapper-padding);
+  border-radius: var( --wrapper-border-radius);
+  background-color: var(--wrapper-background-color);
+}
+
+li {
+  list-style-type: none;
 }
 
 ol {
   display: flex;
-  justify-content: space-around;
-  list-style-type: none;
+  padding: 0;
+  counter-reset: list-items;
+/*   justify-content: space-around; */
 }
 
-.selected {
-  
-}
-
-.selected li:before {
-  content: counter(custom-counter);
-  counter-increment: custom-counter;
-  display: inline-block;
-  width: 25px; /* Adjust the size of the circle */
-  height: 25px; /* Adjust the size of the circle */
-  border: 2px solid #000; /* Adjust the border width and color */
-  border-radius: 50%; /* Create a circle */
+ol li {
+  position: relative;
   text-align: center;
-  line-height: 25px; /* Center the number vertically */
-  background-color: #f00; /* Set the fill color */
-  color: #fff; /* Set the text color */
-  font-weight: bold;
-  margin-right: 5px; /* Add some spacing between the circle and the content */
+  flex-basis: 100%;
+}
+
+ol li::before {
+  counter-increment: list-items;
+  content: counter(list-items);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: var(--circle-width);
+  height: var(--circle-width);
+  background-color: white;
+  font-size: var(--circle-font-size);
+  border-radius: 50%;
+  border: var(--circle-border-width) solid black;
+  margin: 0 auto var(--circle-bottom-margin) auto
+}
+
+.selected::before {
+  color: white;
+  background-color: var(--selected-background-color);
+}
+
+ol li:not(:first-of-type)::after {
+  content: "";
+  display: block;
+  width: calc(100% - var(--circle-width));
+  height: var(--divider-line-height);
+  background-color: black;
+  position: absolute;
+  left: calc(-50% + var(--circle-radius));
+  top: calc(var(--circle-radius) + var(--circle-border-width) - var(--divider-line-height) /2)
 }
