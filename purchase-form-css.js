@@ -86,3 +86,53 @@ ol li:not(:first-of-type)::after {
   left: calc(-50% + var(--circle-radius));
   top: calc(var(--circle-radius) + var(--circle-border-width) - var(--divider-line-height) /2)
 }
+
+ul {
+  padding: 0;
+}
+
+ul li {
+  padding: 12px;
+  margin-top: 12px;
+  height: 40px;
+  background-color: white;
+  border-radius: 8px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+label {
+  margin-left: 4px;
+}
+
+.blue-product {
+  color: #626ee3;
+  border-left: 5px solid #626ee3;
+}
+
+.red-product {
+  color: #890023;
+  border-left: 5px solid #890023;
+}
+
+.orange-product {
+  color: #f37f1b;
+  border-left: 5px solid #f37f1b;
+}
+
+.green-product {
+  color: #11967e;
+  border-left: 5px solid #11967e;
+}
+
+button {
+  background-color: #02203c;
+  color: white;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 16px;
+  display: block;
+  margin-left: auto;
+}
+
